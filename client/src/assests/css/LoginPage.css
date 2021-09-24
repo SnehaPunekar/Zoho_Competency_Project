@@ -1,0 +1,103 @@
+.outerbox {
+  height: 100%;
+  margin: 0;
+}
+
+.back {
+  display: block;
+  width: 100%;
+  height: 615px;
+  object-fit: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+.login-box {
+  width: 320px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+h1 {
+  margin: 0;
+  padding: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.login-box p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.login-box #input1,
+#input2 {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+/* .login-box input {
+  width: 100%;
+  margin-bottom: 20px;
+} */
+.login-box input[type="txt"],
+#pass {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.login-box button[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: #1c8adb;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 20px;
+  width: 250px;
+  margin-bottom: 10px;
+  align-self: center;
+}
+.login-box button[type="submit"]:hover {
+  cursor: pointer;
+  background: #39dc79;
+  color: #000;
+  justify-self: center;
+}
+
+.login-box #forget {
+  text-decoration: underline;
+  font-size: 14px;
+  color: #fff;
+  justify-self: left;
+  margin-top: 0;
+  background: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+.login-box a:hover {
+  color: #39dc79;
+}
