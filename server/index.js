@@ -2,9 +2,10 @@ const express = require('express');
 const cors = require('cors')
 const app = express();
 const mysql = require('mysql');
-
+const AdminServices =  require('./services/AdminServices.js');
 app.use(cors());
 app.use(express.json());
+
 
 const db = mysql.createPool({
     host : 'localhost',
@@ -60,19 +61,26 @@ app.post('/addCompetencyArea', (request,response)=>{
 });
 
 app.get('/getCompetencyAreaNames',(req,res)=>{
-    db.query('SELECT Area_id,AreaName FROM Competency_Area;',(err,result)=>{
-        if(err){
-            console.log(err);
-        }
-        else{
-            if(result.length > 0 ){
-                res.json({data:result});
-            }
-            else{
-                console.log('No data found!');
-            }
-        }
-    });
+    // db.query('SELECT Area_id,AreaName FROM Competency_Area;',(err,result)=>{
+    //     if(err){
+    //         console.log(err);
+    //     }
+    //     else{
+    //         if(result.length > 0 ){
+    //             res.json({data:result});
+    //         }
+    //         else{
+    //             console.log('No data found!');
+    //         }
+    //     }
+    // });
+    // getarea();
+    let out = new AdminServices().getAllCompetencyAreas();
+    console.log('UI Response');
+    console.log(out);
+    res.json({data:out})
+
+    
 })
 
 app.post('/AddDescriptor', (request,response)=>{
