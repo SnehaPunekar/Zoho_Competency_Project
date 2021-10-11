@@ -40,6 +40,7 @@ function CreateTemplate() {
   const[change,setChange] = useState(false);
   const[details,setDetails] = useState([]);
   const[names,setNames] =useState([]);
+  const[roles,setRoles] = useState([]);
 
 
     const classes = useStyles();
@@ -75,6 +76,18 @@ function CreateTemplate() {
            setDetails(response.data.data);
          })
       },[change])
+
+      useEffect(() => {
+        Axios.get('http://localhost:3001/getRoles')
+        .then(response =>{
+         setRoles(response.data.data);
+        })
+    }, [])
+
+
+
+
+
     return (
         <div className="content">
             <center>
@@ -97,6 +110,24 @@ function CreateTemplate() {
                   </select>
               </div>
             </div> 
+            <div class="row">
+              <div class="col-25">
+                  <label for="role_name">Select Role</label>  
+              </div>
+              <div class="col-75">
+                  <select id="role_name" name="role_name"
+                   onChange={e=> setValue(e.target.value)}>
+                      <option value="role_1">Select Role</option>
+                      {
+                        roles.map((value)=>{  
+                        return(
+                            <option value={value.Role_id}>{value.Role_Name}</option>
+                        )
+                    })
+                }
+                  </select>
+              </div>
+              </div>
             <div className={classes.root}>
              {
               names.map((value)=>{ 

@@ -34,12 +34,13 @@ function App() {
                 <Navbarmenu />
                
                 <Route path='/AddCompetencyArea' component={AddCompetencyArea}/>
-                <Route path='/addCompetencyDescriptor' component={AddCompetencyDescriptor}/>
+                <Route path='/AddCompetencyDescriptor' component={AddCompetencyDescriptor}/>
                 <Route path='/AddRatings' component={AddRatings}/>
                 <Route path='/ReviewCycle' component={ReviewCycle}/>
             
                 <Route path='/AddTemplate' component={AddTemplate}/>
                 <Route path='/createTemplate' component={CreateTemplate}/>
+                <Route path='/AssignTemplate' component={AssignTemplate}/> 
                 <Route path='/viewTemplate' component={ViewTemplate}/>
                 
                 <Route path='/selfAssessment' component={SelfAssessment}/>
@@ -53,10 +54,6 @@ function App() {
                <Route path='/ChangePassword' component={ChangePassword}/>
                <NavbarLead />
                                        
-               <Route path='/AddTemplate' component={AddTemplate}/>
-               <Route path='/CreateTemplate' component={CreateTemplate}/>
-               <Route path='/AssignTemplate' component={AssignTemplate}/> 
-               <Route path='/ViewTemplate' component={ViewTemplate}/>
                
                <Route path='/selfAssessment' component={SelfAssessment}/>
                <Route path='/lastselfassessment' component={LastSelfAssessment}/>

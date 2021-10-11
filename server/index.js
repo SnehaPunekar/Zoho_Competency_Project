@@ -38,50 +38,17 @@ app.post('/login',(request,response)=>{
     });
 });
 
-app.post('/addCompetencyArea', (request,response)=>{
-
+app.post('/addCompetencyArea',async (request,response)=>{
     const AreaName = request.body.AreaName;
-
-    db.query('INSERT INTO Competency_Area(AreaName) VALUES (?)',[AreaName],
-    (error,result)=>{
-        if(error){
-            console.log(error);
-            response.json({err:error, success:false});
-        }
-        else{
-            if(result.length > 0){
-                console.log(result);
-                response.json({data:result, success:true});
-            }
-            else{
-                response.json({success:false});
-            }
-        }
-    });
+    console.log(AreaName);
+    let out = await new AdminServices().addCompetencyAreas(AreaName);
+    response.json({data:out}) 
 });
 
-app.get('/getCompetencyAreaNames',(req,res)=>{
-    // db.query('SELECT Area_id,AreaName FROM Competency_Area;',(err,result)=>{
-    //     if(err){
-    //         console.log(err);
-    //     }
-    //     else{
-    //         if(result.length > 0 ){
-    //             res.json({data:result});
-    //         }
-    //         else{
-    //             console.log('No data found!');
-    //         }
-    //     }
-    // });
-    // getarea();
-    let out = new AdminServices().getAllCompetencyAreas();
-    console.log('UI Response');
-    console.log(out);
-    res.json({data:out})
-
-    
-})
+app.get('/getCompetencyAreaNames',async (request,response)=>{
+    let out = await new AdminServices().getAllCompetencyAreas();
+    response.json({data:out}) 
+});
 
 app.post('/AddDescriptor', (request,response)=>{
 
@@ -122,6 +89,24 @@ app.get('/getDescriptor',(req,res)=>{
         }
     });
 })
+
+app.get('/getRoles',(req,res)=>{
+    db.query('SELECT Role_id,Role_Name FROM Role;',(err,result)=>{
+        if(err){
+            console.log(err);
+        }
+        else{
+            if(result.length > 0 ){
+                res.json({data:result});
+            }
+            else{
+                console.log('No data found!');
+            }
+        }
+    });
+})
+
+
 
 app.post('/addTemplate', (request,response)=>{
 

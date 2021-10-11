@@ -59,14 +59,14 @@ const NavbarLead = () => {
                     </>}
                     <ul className={boxClass.join(' ')}>
                         
-                        <li onClick={toggleSubmenu} className="menu-item sub__menus__arrows" > <Link to="#"> Template <FiChevronDown /> </Link>
+                        {/* <li onClick={toggleSubmenu} className="menu-item sub__menus__arrows" > <Link to="#"> Template <FiChevronDown /> </Link>
                             <ul className={boxClassSubMenu.join(' ')} > 
                                 <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/AddTemplate`}> Add Template </NavLink> </li>
                                 <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/CreateTemplate`}> Create Template </NavLink> </li>
                                 <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/AssignTemplate`}> Assign Template </NavLink> </li>
                                 <li><NavLink onClick={toggleClass} activeClassName='is-active' to={`/ViewTemplate`}> View Template </NavLink> </li>
                             </ul>
-                        </li>
+                        </li> */}
                         <li onClick={toggleSubmenu} className="menu-item sub__menus__arrows" > <Link to="#"> Assessment <FiChevronDown /> </Link>
                             <ul className={boxClassSubMenu.join(' ')} > 
                                 <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/LeadAssessment`}> Lead Assessment </NavLink> </li>

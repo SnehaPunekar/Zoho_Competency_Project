@@ -64,15 +64,16 @@ const Navbarmenu = () => {
                            
                                 <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/AddTemplate`}> Add Template </NavLink> </li>
                                 <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/CreateTemplate`}> Create Template </NavLink> </li>
+                                <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/AssignTemplate`}> Assign Template </NavLink> </li>
                                 <li><NavLink onClick={toggleClass} activeClassName='is-active' to={`/ViewTemplate`}> View Template </NavLink> </li> 
                             </ul>
                         </li>
 
                         <li onClick={toggleSubmenu} className="menu-item sub__menus__arrows" > <Link to="#"> Add <FiChevronDown /> </Link>
                             <ul className={boxClassSubMenu.join(' ')} > 
-                            <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/CompetencyArea`}> Competency Area </NavLink> </li>
-                            <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/CompetencyDescriptor`}> Competency Descriptor </NavLink> </li>
-                            <li><NavLink onClick={toggleClass} activeClassName='is-active' to={`/Rating`}> Rating </NavLink> </li>
+                            <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/AddCompetencyArea`}> Competency Area </NavLink> </li>
+                            <li> <NavLink onClick={toggleClass} activeClassName='is-active'  to={`/AddCompetencyDescriptor`}> Competency Descriptor </NavLink> </li>
+                            <li><NavLink onClick={toggleClass} activeClassName='is-active' to={`/AddRatings`}> Rating </NavLink> </li>
                             <li><NavLink onClick={toggleClass} activeClassName='is-active' to={`/ReviewCycle`}> Review Cycle </NavLink> </li>
                                 
                             </ul>
